@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------- HEADER ----------------- */
+
+.header, .header2{
+    max-height: 7rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header__list, .header2__list{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.header__listItem, .header2__listItem {
+    text-transform: uppercase;
+    margin: 1rem;
+    align-items: center;
+    margin: 2rem;
+}
+
+.header__button{  
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    padding: .8rem;
+    color: palevioletred;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid palevioletred; 
+}
+
+.header__button:hover {
+    cursor: pointer;
+    color: lightslategrey;
+}
+
+.header__link, .header2__link {
+    text-decoration: none;
+    color: black;
+}
+
+.header__link:hover {
+    cursor: pointer;
+    color: palevioletred;
+}
+
+/* ----------------- HEADER 2 ----------------- */
+
+/* ----------------- LOGIN FORM ----------------- */
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 7rem;
+    width: 15rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login__formSubmit{
+    cursor: pointer;
+    outline: none;
+    width: 9rem;
+    padding: .3rem;
+    color: palevioletred;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid palevioletred; 
+
+}
+
+
+
+
+/* ----------------- INICIO.JSX ----------------- */
+
+.inicio__div{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ----------------- HOMEPAGE.JSX ----------------- */
+
+.home__div{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ----------------- WELCOME.JSX ----------------- */
+/* -----------------  ANUNCIOS ----------------- */
+
+.welcome__divCard{
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center center;
+    max-width: 80%;
+    
+}
+
+.divCard__content{
+    padding: 1rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.divCard__content__title{
+    font-weight: bold;
+    font-size: 1.3rem;
+} /* --- mira para hacerlo con nth child */
+
+.div__divCard__button{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+.divCard__button {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    padding: .8rem;
+    color: palevioletred;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid palevioletred; 
+    max-width: 15rem;
+}
