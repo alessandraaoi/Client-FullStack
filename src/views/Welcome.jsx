@@ -12,7 +12,8 @@ function Welcome() {
   const [anuncios, setAnuncios] = useState([]); // anuncios con userId
   const [anuncios2, setAnuncios2] = useState([])
 
-  
+  const { VITE_USER, VITE_ANUNCIO} = import.meta.env
+
   const navigate = useNavigate();
 
   const {_id} = useParams();
@@ -25,7 +26,7 @@ function Welcome() {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/user/${_id}`)
+    axios.get(`${VITE_USER}/${_id}`)
     .then(({data}) => setName(data.nombre))
     .catch((error) => console.error(error))
     console.log('_id:', _id)
@@ -33,21 +34,17 @@ function Welcome() {
 
   useEffect(() => {
     // Fetch anuncios desde el server con userId
-    axios.get(`http://localhost:3000/anuncio/${_id}`)
+    axios.get(`${VITE_ANUNCIO}/${_id}`)
      .then(res => setAnuncios(res.data))
      .catch((error) => console.error(error));
    }, []);
 
    useEffect(() => {
     // Fetch anuncios desde el server con id (id anuncio)
-    axios.get(`http://localhost:3000/anuncio/${id}`)
+    axios.get(`${VITE_ANUNCIO}/${id}`)
      .then(res => setAnuncios2(res.data))
      .catch((error) => console.error(error));
    }, []);
-
-   
-
-
 
 
    console.log('anuncios', anuncios);
