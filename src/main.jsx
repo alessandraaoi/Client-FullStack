@@ -19,8 +19,6 @@ import Form from './views/Form'
 
 import './css/styles.css'
 
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
 
@@ -40,7 +38,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path = '/servicios' element = { <OfreceServicio/>} />
             <Route path = '/home' element = { <HomePage/>} />
 
-            <Route path="/form/:_id" element={<Form/>} />
+            <Route path="/edit/:id" element={<Form/>} /> 
+            {/* :id = parametro dinamico */}
+            {/* ruta para update (edit), passo id = id annuncio */}
+
             {/* <Route path = '/userarea' element = {localStorage.getItem('user') == null ? <Login/> : <UserArea/>} /> */}
 
         </Routes>

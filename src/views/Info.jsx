@@ -12,9 +12,9 @@ function Info() {
 
   <Header/>
   
-    <div>
+    <div className='info__div'>
 
-      <p> Info sobre nuestra actividad </p>
+      <p className='info__p'> Info sobre nuestra actividad </p>
       
       
     </div>

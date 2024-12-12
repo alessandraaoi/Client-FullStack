@@ -4,24 +4,34 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Header2 from '../components/Header2';
 
 const Form = () => {
 
-  const {_id} = useParams()
-
   //Obtener el ID del anuncio desde los parámetros de la URL
+  const {id }= useParams();
+  const {_id} = useParams();
+
+  // const {state} = useLocation()
+  // const {title, description} = state;
+ 
+  const [anuncio, setAnuncio] = useState([])
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
- 
+
   const navigate = useNavigate();
 
     // Obtener los datos del anuncio cuando el componente se monta
     useEffect(() => {
       const fetchAnuncio = async () => {
         try {
-          const respuesta = await axios.get(`http://localhost:3000/anuncio/${_id}`);
+          const respuesta = await axios.get(`http://localhost:3000/anuncio/${id}`);
+          console.log('form id axios.get:', id)
+          // leggendo la console vediamo come _id si riferisce a userid --> ERROR --> _id deve corrispondere a _id 
+
           setTitle(respuesta.data.title || ''); // Establecer el título en el estado
           setDescription(respuesta.data.description || ''); // Establecer la descripción en el estado
         } catch (error) {
@@ -29,7 +39,7 @@ const Form = () => {
         }
       };
       fetchAnuncio();
-    }, [_id]);
+    }, [id]);
 
 
   // Manejo de la actualización del anuncio
@@ -39,14 +49,14 @@ const Form = () => {
     try {
       const datosActualizados = { title, description };
 
-      console.log('URL para actualizar:', `http://localhost:3000/anuncio/${_id}`);
+      console.log('URL para actualizar:', `http://localhost:3000/anuncio/${id}`);
       console.log('Datos para actualizar:', { title, description });
       
-      console.log(`URL para actualizar: http://localhost:3000/anuncio/${_id}`);
+      console.log(`URL para actualizar: http://localhost:3000/anuncio/${id}`);
 
 
       // Petición PUT para actualizar el anuncio con los nuevos datos
-      const response = await axios.put(`http://localhost:3000/anuncio/${_id}`, datosActualizados); 
+      const response = await axios.put(`http://localhost:3000/anuncio/${id}`, datosActualizados); 
       console.log('Anuncio actualizado:', response.data);
       navigate(`/welcome/${_id}`); // Redirigir al usuario después de la actualización
     } catch (error) {

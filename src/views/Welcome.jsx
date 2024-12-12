@@ -9,27 +9,46 @@ function Welcome() {
 
   const [name, setName] = useState({}); // user
   
-  const [anuncios, setAnuncios] = useState([]); // anuncios
+  const [anuncios, setAnuncios] = useState([]); // anuncios con userId
+  const [anuncios2, setAnuncios2] = useState([])
+
+  
   const navigate = useNavigate();
 
   const {_id} = useParams();
+  const {id} = useParams();
+  console.log('id:', id)
+  // const {primaryId} = useParams();
 
   const handleUpdateClick = () => {
-    navigate(`/form/${_id}`);
+    navigate(`/edit/${anuncios.id}`)
   }
 
   useEffect(() => {
     axios.get(`http://localhost:3000/user/${_id}`)
     .then(({data}) => setName(data.nombre))
     .catch((error) => console.error(error))
+    console.log('_id:', _id)
   }, [_id]); //el useEffect se ejecuta cada vez que cambia el valor de '_id'
 
   useEffect(() => {
-    // Fetch anuncios desde el server
+    // Fetch anuncios desde el server con userId
     axios.get(`http://localhost:3000/anuncio/${_id}`)
      .then(res => setAnuncios(res.data))
      .catch((error) => console.error(error));
    }, []);
+
+   useEffect(() => {
+    // Fetch anuncios desde el server con id (id anuncio)
+    axios.get(`http://localhost:3000/anuncio/${id}`)
+     .then(res => setAnuncios2(res.data))
+     .catch((error) => console.error(error));
+   }, []);
+
+   
+
+
+
 
    console.log('anuncios', anuncios);
 
@@ -52,7 +71,7 @@ function Welcome() {
 
           <div className='div__divCard__button'>
           <button type='button' className='divCard__button'>Contacta con {`${name}`} </button>
-          <button type="button" className='divCard__button' onClick={handleUpdateClick}>Update</button>
+          <button type="button" className='divCard__button' onClick={handleUpdateClick}>Update</button>    
           <button type="button" className='divCard__button'>Delete</button>
           </div>
           </div>

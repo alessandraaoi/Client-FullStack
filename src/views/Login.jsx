@@ -5,12 +5,12 @@ import { useState } from 'react'
 import Header from '../components/Header2';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs' 
 
 function Login() {
 
   <Header />
-
+  const { VITE_LOGIN } = import.meta.env
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
@@ -41,7 +41,7 @@ function Login() {
       };
       
       setLoading(true)
-      await axios.post('http://localhost:3000/login', User)
+      await axios.post(`${VITE_LOGIN}`, User)
       .then(({data}) => {
         console.log(data)
         console.log(User)
@@ -84,7 +84,7 @@ function Login() {
         <button type="submit" className='register__formButton'>{loading? 'Cargando...' : 'Login! '} </button>
         <br/>
         <p className='register__p'>No tienes una cuenta?</p>
-        <b onClick={()=> {navigate('/login')}} className='register__iniciaSesion'>Registrate!</b>
+        <b onClick={()=> {navigate('/')}} className='register__iniciaSesion'>Registrate!</b>
       </form>
       
     </div>

@@ -10,15 +10,15 @@ function Header2() {
 
   return (
     <header className="header2">
-      <h1 className="header2__title">COLLABORI-AMO</h1>
+      <h1 className="header2__title"><Link to = {'/'} className="header__link">Better Barter</Link></h1>
       <ul className="header2__list">
-        <li className="header2__listItem"><Link to = {'/explora'} element = {<Explora/>} className="header2__link">EXPLORA</Link></li>
+        <li className="header__listItem"><Link to = {'/explora'} element = {<Explora/>} className="header2__link">Explora</Link></li>
 
         {/* {localStorage.getItem('user')==null?     */}
         {/* <li className="header__listItem"><button className='header__button'><Link to = {'/login'} element = {<Login/>} className="header__link">INICIA SESIÓN</Link></button></li> */}
         
-        <li className="header__listItem"><Link to = {'/servicios'} element = {<OfreceServicio/>} className="header__link">OFRECE UN SERVICIO</Link></li>
-        <li className="header2__listItem"><button className='header__button'><Link to = {'/welcome/:_id'} element = {<Welcome/>} className="header2__link">BIENVENIDO</Link></button></li>
+        <li className="header__listItem"><Link to = {'/servicios'} element = {<OfreceServicio/>} className="header__link">Ofrece un servicio</Link></li>
+        <li className="header2__listItem"><button className='header__button'><Link to = {'/welcome/:_id'} element = {<Welcome/>} className="header2__link">Area Personal</Link></button></li>
         
       </ul>
     </header>

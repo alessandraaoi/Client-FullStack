@@ -24,11 +24,11 @@ function Explora() {
 
     <Header2/>
     
-    <div>
+    <div className='community__div'>
 
-      <p> EXPLORA </p>
+      <p className='community__p'> Explora </p>
 
-      <p>{`${titulo}`}</p>
+      {/* <p className='community__p'>{`${titulo}`}</p> */}
       
     </div>
     </>

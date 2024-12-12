@@ -7,9 +7,9 @@ function OfreceServicio() {
     <>
 
     <Header2/>
-    <div>
+    <div className='servicio__div'>
 
-      <p> Publica tu anuncio </p>  
+      <p className='div__p'> Publica tu anuncio - POST, AÑADIR + PUT, EDITAR + DELETE, BORRAR-</p>  
       {/* insertar sección para publicar anuncio (Create)     */}
     </div>
     </>

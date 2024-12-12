@@ -1,95 +1,203 @@
-body{
+*{
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 /* ----------------- HEADER ----------------- */
 
-.header, .header2{
-    max-height: 7rem;
-    padding: 1rem;
+.header, .header2  {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    background-color: rgba(255, 182, 193, 0.2); 
+    padding: 20px;
+  }
 
-.header__list, .header2__list{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
-}
+/* Título del header */
+.header__title, .header2__title {
+    text-align: center center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+  }
 
-.header__listItem, .header2__listItem {
-    text-transform: uppercase;
-    margin: 1rem;
-    align-items: center;
-    margin: 2rem;
-}
-
-.header__button{  
-    cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
-    outline: none;
-    padding: .8rem;
-    color: palevioletred;
-    border-radius: 8px;
-    background-color: white;
-    border: 1px solid palevioletred; 
-}
-
-.header__button:hover {
-    cursor: pointer;
-    color: lightslategrey;
-}
-
+  /* Enlace del título */
 .header__link, .header2__link {
     text-decoration: none;
-    color: black;
-}
+    color: inherit;
+    transition: color 0.3s ease;
+  }
 
-.header__link:hover {
+  .header__link:hover {
+    color:palevioletred; /* Cambia a azul al pasar el ratón */
+  }
+
+/* Lista de navegación */
+.header__list, .header2__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* gap: 15px; */
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+/* Elementos de la lista */
+.header__listItem, .header2__listItem {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+.header__listItem .header__link {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+
+.header__listItem .header__link:hover {
+    color:palevioletred; /* Color azul al pasar el ratón */
+  }
+
+/* Botón de inicio de sesión */
+.header__button, .header__button {
+    background-color: palevioletred; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    color: palevioletred;
-}
+    transition: background-color 0.3s ease;
+  }
 
-/* ----------------- HEADER 2 ----------------- */
+  .header__button:hover {
+    background-color:  rgba(255, 182, 193, 0.2);  
+    color: palevioletred;
+  }
+  
+  .header__button .header__link {
+    color: #fff; /* Asegúrate de que el enlace sea blanco en el botón */
+    text-decoration: none;
+  }
+
 
 /* ----------------- LOGIN FORM ----------------- */
 
-.login__form{
+/* Contenedor principal del registro */
+.register__div {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+/* Encabezados del formulario */
+.register__h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .register__h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo del formulario */
+  .register__form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    margin: 7rem;
-    width: 15rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.login__formSubmit{
-    cursor: pointer;
+    gap: 15px;
+  }
+  
+  /* Etiquetas del formulario */
+  .register__formLabel {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+  }
+  
+  /* Campos de entrada */
+  .register__formInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .register__formInput:focus {
+    border-color: palevioletred;
     outline: none;
-    width: 9rem;
-    padding: .3rem;
-    color: palevioletred;
-    border-radius: 8px;
+  }
+  
+  /* Botón de enviar */
+  .register__formButton {
+    background-color: palevioletred;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register__formButton:hover {
     background-color: white;
-    border: 1px solid palevioletred; 
+    color: palevioletred;
+  }
+  
+  /* Texto debajo del botón */
+  .register__p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Enlace para registrarse */
+  .register__iniciaSesion {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: palevioletred;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .register__iniciaSesion:hover {
+    color: darkorchid;
+  }
 
-}
+
 
 
 
 
 /* ----------------- INICIO.JSX ----------------- */
 
-.inicio__div{
-    padding: 1rem;
+.inicio__div, .info__p, .community__div, .welcome__div, .servicio__div{
+    height: 100vh;
+    padding: 3rem;
+    background-color: rgba(255, 182, 193, 0.2);
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: top;
     font-family: Arial, Helvetica, sans-serif;
 }
 
