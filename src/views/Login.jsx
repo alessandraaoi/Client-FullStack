@@ -33,8 +33,8 @@ function Login() {
   
     if(password !== '' && correo !== ''){
       const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u');
-      console.log(password);
-      console.log(hashedPassword);
+      // console.log(password);
+      // console.log(hashedPassword);
       const User = { 
         correo, 
         hashedPassword
